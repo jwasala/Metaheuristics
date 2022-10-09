@@ -1,10 +1,7 @@
 #pragma once
 #include <map>
-#include <memory>
 #include <string>
 #include <vector>
-
-#include "config.h"
 
 class ttp_node
 {
@@ -91,6 +88,7 @@ private:
 	std::map<int, ttp_item> items_;
 
 	std::vector<std::vector<double>> distances_;
+	std::map<int, std::vector<int>> items_at_node_;
 
 public:
 	ttp(std::string problem_name, std::string knapsack_data_type, const int dimension,
@@ -99,6 +97,8 @@ public:
 	    std::map<int, ttp_item> items);
 
 	std::vector<std::vector<double>> make_distance_matrix();
+
+	std::map<int, std::vector<int>> make_items_at_node_mapping();
 
 	[[nodiscard]] std::string dumps() const;
 
@@ -135,6 +135,16 @@ public:
 	[[nodiscard]] double distance_between(const int node_1_id, const int node_2_id) const
 	{
 		return distances_[node_1_id - 1][node_2_id - 1];
+	}
+
+	[[nodiscard]] std::vector<int>& items_at(const int node_id)
+	{
+		if (items_at_node_.contains(node_id))
+		{
+			return items_at_node_.at(node_id);
+		}
+		auto empty_vect = std::vector<int>();
+		return empty_vect;
 	}
 
 	[[nodiscard]] double min_speed() const

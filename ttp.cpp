@@ -1,6 +1,7 @@
 #include "ttp.h"
 
 #include <memory>
+#include <ranges>
 
 double ttp_node::dist_to(ttp_node const& other) const
 {
@@ -24,6 +25,7 @@ ttp::ttp(std::string problem_name, std::string knapsack_data_type, const int dim
 	items_(std::move(items))
 {
 	distances_ = make_distance_matrix();
+	items_at_node_ = make_items_at_node_mapping();
 }
 
 std::vector<std::vector<double>> ttp::make_distance_matrix()
@@ -40,6 +42,18 @@ std::vector<std::vector<double>> ttp::make_distance_matrix()
 	}
 
 	return mtx;
+}
+
+std::map<int, std::vector<int>> ttp::make_items_at_node_mapping()
+{
+	std::map<int, std::vector<int>> map;
+
+	for (auto& item : items() | std::views::values)
+	{
+		map[item.node_id()].push_back(item.id());
+	}
+
+	return map;
 }
 
 std::string ttp::dumps() const
