@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="TTP Files">
+      <UniqueIdentifier>{6838f947-9fdd-4e59-8c25-077cca68fdd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Config">
+      <UniqueIdentifier>{1ea1ce5c-b54f-4495-af45-0c94858972fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Loaders">
+      <UniqueIdentifier>{eb4b61bb-0c1c-4277-80fe-5a5cfc5d98b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Domain">
+      <UniqueIdentifier>{fc2269dd-718d-476e-af3e-b1afc2c41f0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Algorithm">
+      <UniqueIdentifier>{3bb094f4-e228-49be-971e-2c823b55b008}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Config">
+      <UniqueIdentifier>{085cee98-97c8-443b-bd99-dffe0a5b07b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Loaders">
+      <UniqueIdentifier>{bf65429f-9a60-44e9-a9de-738b90ca19e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Domain">
+      <UniqueIdentifier>{db38ba4e-7c2d-429e-8d71-972717cbdfc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Algorithm">
+      <UniqueIdentifier>{930f6813-a7c6-4fbe-b0e7-84d32df87e72}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\ttp\easy_0.ttp">
+      <Filter>TTP Files</Filter>
+    </None>
+    <None Include="assets\ttp\easy_1.ttp">
+      <Filter>TTP Files</Filter>
+    </None>
+    <None Include="assets\ttp\easy_2.ttp">
+      <Filter>TTP Files</Filter>
+    </None>
+    <None Include="assets\ttp\easy_3.ttp">
+      <Filter>TTP Files</Filter>
+    </None>
+    <None Include="assets\ttp\easy_4.ttp">
+      <Filter>TTP Files</Filter>
+    </None>
+    <None Include="assets\ttp\hard_0.ttp">
+      <Filter>TTP Files</Filter>
+    </None>
+    <None Include="assets\ttp\hard_1.ttp">
+      <Filter>TTP Files</Filter>
+    </None>
+    <None Include="assets\ttp\hard_2.ttp">
+      <Filter>TTP Files</Filter>
+    </None>
+    <None Include="assets\ttp\hard_3.ttp">
+      <Filter>TTP Files</Filter>
+    </None>
+    <None Include="assets\ttp\hard_4.ttp">
+      <Filter>TTP Files</Filter>
+    </None>
+    <None Include="assets\ttp\medium_0.ttp">
+      <Filter>TTP Files</Filter>
+    </None>
+    <None Include="assets\ttp\medium_1.ttp">
+      <Filter>TTP Files</Filter>
+    </None>
+    <None Include="assets\ttp\medium_2.ttp">
+      <Filter>TTP Files</Filter>
+    </None>
+    <None Include="assets\ttp\medium_3.ttp">
+      <Filter>TTP Files</Filter>
+    </None>
+    <None Include="assets\ttp\medium_4.ttp">
+      <Filter>TTP Files</Filter>
+    </None>
+    <None Include="assets\ttp\trivial_0.ttp">
+      <Filter>TTP Files</Filter>
+    </None>
+    <None Include="assets\ttp\trivial_1.ttp">
+      <Filter>TTP Files</Filter>
+    </None>
+    <None Include="config.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="config.h">
+      <Filter>Header Files\Config</Filter>
+    </ClInclude>
+    <ClInclude Include="config_loader.h">
+      <Filter>Header Files\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="ttp_loader.h">
+      <Filter>Header Files\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="ttp.h">
+      <Filter>Header Files\Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="ttp_solution.h">
+      <Filter>Header Files\Domain</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="config.cpp">
+      <Filter>Source Files\Config</Filter>
+    </ClCompile>
+    <ClCompile Include="config_loader.cpp">
+      <Filter>Source Files\Loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="ttp_loader.cpp">
+      <Filter>Source Files\Loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="ttp.cpp">
+      <Filter>Source Files\Domain</Filter>
+    </ClCompile>
+    <ClCompile Include="ttp_solution.cpp">
+      <Filter>Source Files\Domain</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Metaheuristics.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
