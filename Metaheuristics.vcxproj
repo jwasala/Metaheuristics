@@ -153,8 +153,10 @@
     <None Include="config.json" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="base_algorithm.h" />
     <ClInclude Include="config.h" />
     <ClInclude Include="config_loader.h" />
+    <ClInclude Include="ea.h" />
     <ClInclude Include="ttp.h" />
     <ClInclude Include="ttp_loader.h" />
     <ClInclude Include="resource.h" />
@@ -163,6 +165,7 @@
   <ItemGroup>
     <ClCompile Include="config.cpp" />
     <ClCompile Include="config_loader.cpp" />
+    <ClCompile Include="ea.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ttp.cpp" />
     <ClCompile Include="ttp_loader.cpp" />

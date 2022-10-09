@@ -114,6 +114,12 @@
     <ClInclude Include="ttp_solution.h">
       <Filter>Header Files\Domain</Filter>
     </ClInclude>
+    <ClInclude Include="base_algorithm.h">
+      <Filter>Header Files\Algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="ea.h">
+      <Filter>Header Files\Algorithm</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -133,6 +139,9 @@
     </ClCompile>
     <ClCompile Include="ttp_solution.cpp">
       <Filter>Source Files\Domain</Filter>
+    </ClCompile>
+    <ClCompile Include="ea.cpp">
+      <Filter>Source Files\Algorithm</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

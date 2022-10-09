@@ -62,8 +62,28 @@ std::string ttp::dumps() const
 	return "Problem " + std::to_string(dimension()) + "/" + std::to_string(number_of_items()) + "/" + std::to_string(capacity_of_knapsack());
 }
 
-double ttp::fitness(const ttp_solution& solution)
+double ttp::distance_between(const int node_1_id, const int node_2_id) const
 {
+	return distances_[node_1_id - 1][node_2_id - 1];
+}
+
+std::vector<int>& ttp::items_at(const int node_id)
+{
+	if (items_at_node_.contains(node_id))
+	{
+		return items_at_node_.at(node_id);
+	}
+	auto empty_vect = std::vector<int>();
+	return empty_vect;
+}
+
+double ttp::fitness(ttp_solution& solution)
+{
+	// if (solution.fitness_cached() != 0.0)
+	// {
+	// 	return solution.fitness_cached();
+	// }
+
 	double current_weight = 0;
 	double current_profit = 0;
 	double current_time = 0;
@@ -92,7 +112,9 @@ double ttp::fitness(const ttp_solution& solution)
 		current_time += this->distance_between(from_id, to_id) / current_speed;
 	}
 
-	return current_profit - current_time;
+	const double fitness = current_profit - current_time;
+	solution.set_fitness_cached(fitness);
+	return fitness;
 }
 
 ttp_solution ttp::make_random_solution()

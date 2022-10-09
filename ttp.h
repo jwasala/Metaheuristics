@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 
+#include "base_algorithm.h"
 #include "ttp_solution.h"
 
 class ttp_node
@@ -74,7 +75,7 @@ public:
 	}
 };
 
-class ttp
+class ttp : public solvable<ttp_solution>
 {
 private:
 	std::string problem_name_;
@@ -102,9 +103,9 @@ public:
 
 	std::map<int, std::vector<int>> make_items_at_node_mapping();
 
-	[[nodiscard]] double fitness(const ttp_solution& solution);
+	[[nodiscard]] double fitness(ttp_solution& solution) override;
 
-	ttp_solution make_random_solution();
+	ttp_solution make_random_solution() override;
 
 	[[nodiscard]] std::string dumps() const;
 
@@ -138,20 +139,9 @@ public:
 		return (max_speed() - min_speed()) / capacity_of_knapsack();
 	}
 
-	[[nodiscard]] double distance_between(const int node_1_id, const int node_2_id) const
-	{
-		return distances_[node_1_id - 1][node_2_id - 1];
-	}
+	[[nodiscard]] double distance_between(const int node_1_id, const int node_2_id) const;
 
-	[[nodiscard]] std::vector<int>& items_at(const int node_id) 
-	{
-		if (items_at_node_.contains(node_id))
-		{
-			return items_at_node_.at(node_id);
-		}
-		auto empty_vect = std::vector<int>();
-		return empty_vect;
-	}
+	[[nodiscard]] std::vector<int>& items_at(const int node_id);
 
 	[[nodiscard]] double min_speed() const
 	{
