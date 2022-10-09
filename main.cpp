@@ -18,21 +18,28 @@ int main(int argc, char* argv[])
 
 	const auto start_time_make_random = std::chrono::high_resolution_clock::now();
 
-	std::vector<ttp_solution> solutions;
-	solutions.reserve(problems.size());
+	std::map<ttp*, std::vector<ttp_solution>> problems_solutions;
 	for (auto& problem : problems)
 	{
-		for (int i = 0; i < 100; i++)
+		for (int i = 0; i < 1000; i++)
 		{
-			solutions.push_back(ttp_solution::make_random(problem));
+			if (!problems_solutions.contains(&problem))
+			{
+				problems_solutions.insert({ &problem, std::vector<ttp_solution>() });
+				problems_solutions.at(&problem).reserve(1000);
+			}
+			problems_solutions.at(&problem).push_back(problem.make_random_solution());
 		}
 	}
 
 	const auto end_time_make_random = std::chrono::high_resolution_clock::now();
 
-	for (auto& solution : solutions)
+	for (auto& [problem, solutions] : problems_solutions)
 	{
-		solution.fitness();
+		for (auto& solution : solutions)
+		{
+			problem->fitness(solution);
+		}
 	}
 
 	const auto end_time_fitness = std::chrono::high_resolution_clock::now();

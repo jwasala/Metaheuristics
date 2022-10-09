@@ -3,6 +3,8 @@
 #include <string>
 #include <vector>
 
+#include "ttp_solution.h"
+
 class ttp_node
 {
 private:
@@ -100,6 +102,10 @@ public:
 
 	std::map<int, std::vector<int>> make_items_at_node_mapping();
 
+	[[nodiscard]] double fitness(const ttp_solution& solution);
+
+	ttp_solution make_random_solution();
+
 	[[nodiscard]] std::string dumps() const;
 
 	[[nodiscard]] std::string const& problem_name() const
@@ -137,7 +143,7 @@ public:
 		return distances_[node_1_id - 1][node_2_id - 1];
 	}
 
-	[[nodiscard]] std::vector<int>& items_at(const int node_id)
+	[[nodiscard]] std::vector<int>& items_at(const int node_id) 
 	{
 		if (items_at_node_.contains(node_id))
 		{
